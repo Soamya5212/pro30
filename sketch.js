@@ -70,7 +70,8 @@ function draw() {
   textSize(16);
   fill("lightyellow");
   text("Drag the hexagonal stone and release it, to launch it towards the block",300,30);
-  
+  textSize(12);
+  text("press space to hit back",700,300)
   ground.display();
   stand1.display();
   stand2.display();
@@ -121,4 +122,11 @@ function mouseDragged(){
 function mouseReleased(){
   slingShot.fly();
 }
+
+function keyPressed(){
+  if(keyCode === 32) {
+    slingShot.attach(this.polygon);
+  }
+}
+
 
